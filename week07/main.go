@@ -27,5 +27,5 @@ func main() {
 		grade = "BCDF"
 	}
 	fmt.Printf("%d점은 %s등급 입니다.\n", score, grade)
-
+	fmt.Println("안녕")
 }
