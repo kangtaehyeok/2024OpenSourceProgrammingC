@@ -16,8 +16,9 @@ func main() {
 	answer := rand.Intn(6) + 1 //1~6 random
 	fmt.Println(answer)
 
+	var win bool = false
 	for guesses := 0; guesses < 3; guesses++ {
-		fmt.Print("숫자 입력: ")
+		fmt.Printf("%d번의 기회가 남음, 숫자 입력: ", 3-guesses)
 		in := bufio.NewReader(os.Stdin)
 		i, err := in.ReadString('\n')
 
@@ -34,12 +35,19 @@ func main() {
 		fmt.Println(guess)
 
 		if answer == guess {
+			win = true
 			fmt.Println("정답")
+			break
 		} else if answer > guess {
 			fmt.Println("입력하신 수는 정답보다 작은 수 입니다. LOW")
 		} else if answer < guess {
 			fmt.Println("입력하신 수는 정답보다 큰 수 입니다. HIGH")
 		}
-
 	}
+	if win == false {
+		fmt.Println("너가 짐")
+	} else if win == true {
+		fmt.Println("너가 이김")
+	}
+
 }
