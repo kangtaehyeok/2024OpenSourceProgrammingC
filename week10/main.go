@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"log"
+	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -11,6 +12,7 @@ import (
 
 func main() {
 
+	//fmt.Printf("%f\n", math.Sqrt(16.0))
 	fmt.Print("input number: ")
 	in := bufio.NewReader(os.Stdin)
 	i, err := in.ReadString('\n')
@@ -32,12 +34,12 @@ func main() {
 		isPrime = false
 	} else {
 		j := 2
-		for j < n {
+		for j <= int(math.Sqrt(float64(n))) {
 			if n%j == 0 {
 				isPrime = false
-				fmt.Printf("%d ", j) // 약수
-				//break performance up
+				break
 			}
+			fmt.Printf("%d ", j)
 			j++
 		}
 	}
