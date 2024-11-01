@@ -36,15 +36,15 @@ func main() {
 		isPrime = true
 	} else if n%2 == 0 {
 		isPrime = false
-	} else {
-		j := 2
+	} else { // odd number 홀수
+		j := 3 //start value
 		for j <= int(math.Sqrt(float64(n))) {
 			if n%j == 0 {
 				isPrime = false
 				break
 			}
 			fmt.Printf("%d ", j)
-			j++
+			j = j + 2
 		}
 	}
 
