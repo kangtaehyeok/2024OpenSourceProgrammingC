@@ -35,14 +35,16 @@ func main() {
 		for j < n {
 			if n%j == 0 {
 				isPrime = false
+				fmt.Printf("%d ", j) // 약수
+				//break performance up
 			}
 			j++
 		}
 	}
 
 	if isPrime {
-		fmt.Printf("%d is prime number.", n)
+		fmt.Printf("\n%d is prime number.", n)
 	} else {
-		fmt.Printf("%d is NOT prime number", n)
+		fmt.Printf("\n%d is NOT prime number", n)
 	}
 }
